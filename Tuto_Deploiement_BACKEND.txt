@@ -6,14 +6,14 @@ https://dashboard.render.com/
 
 
 
-B] HEBERGEMENT WEB    avec    GITHUB     d'un SITE WEB     FRONTEND    créé avec     html , css , js  :
+B] """""HEBERGEMENT WEB gratuit"""""    avec    """""GITHUB"""""     d'un SITE WEB     FRONTEND    créé avec     html , css , js  :
 
 
 OUVRIR LE COMPTE   GITHUB
 
 B.2] : COMMANDES de DEPLOIEMENT dans GITHUB :
 
-Dans    OPEN Git Bash HERE , on saisit les COMMANDES suivantes :
+Dans    """""OPEN Git Bash HERE""""" , on saisit les COMMANDES suivantes :
 
 
 

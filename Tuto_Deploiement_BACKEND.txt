@@ -117,7 +117,66 @@ To https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.git
    ae20ff1..a1769c5  main -> main
 
 AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ ^C
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git add .
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git commit -m "Modification Fichier2"
+[main eb4e127] Modification Fichier2
+ 1 file changed, 21 insertions(+), 3 deletions(-)
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 459 bytes | 459.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.git
+   a1769c5..eb4e127  main -> main
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git add .
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git commit -m "Ajout CNAME"
+[main e5aa87c] Ajout CNAME
+ 1 file changed, 1 insertion(+)
+ create mode 100644 CNAME
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git push
+fatal: unable to access 'https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.
+git/': Could not resolve host: github.com
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git push
+fatal: unable to access 'https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.
+git/': Failed to connect to github.com port 443 after 21540 ms: Could not connec
+t to server
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git push
+fatal: unable to access 'https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.
+git/': Failed to connect to github.com port 443 after 32946 ms: Could not connec
+t to server
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 323 bytes | 323.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.git
+   eb4e127..e5aa87c  main -> main
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
 $
-
-
 

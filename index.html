@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio | [Votre Nom]</title>
+    
+    <style>
+        /* ==================================== */
+        /* 1. RÉINITIALISATION ET BASES (Mobile-First) */
+        /* ==================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        section {
+            padding: 60px 5%;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ==================================== */
+        /* 2. EN-TÊTE ET NAVIGATION (Mobile-First) */
+        /* ==================================== */
+        header {
+            background: #333;
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: 1.4em;
+        }
+        
+        /* Navigation (Masquée par défaut sur mobile - ici on la garde simple) */
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+            padding: 5px 8px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+            text-decoration: none;
+        }
+
+        /* ==================================== */
+        /* 3. SECTION ACCUEIL (HERO) */
+        /* ==================================== */
+        .hero {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 80px 5%; /* Légèrement moins de padding sur mobile */
+        }
+
+        .hero h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1em;
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            background-color: white;
+            color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #eee;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        /* ==================================== */
+        /* 4. GRILLE DE PROJETS (Responsive avec Grid) */
+        /* ==================================== */
+        .section-projets h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .grille-projets {
+            display: grid;
+            /* Une seule colonne sur mobile par défaut */
+            grid-template-columns: 1fr; 
+            gap: 30px; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .carte-projet {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .carte-projet:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .carte-projet img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .carte-projet h3 {
+            padding: 15px 15px 0;
+            margin-top: 0;
+        }
+
+        .carte-projet p {
+            padding: 0 15px;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .lien-demo, .lien-code {
+            margin-left: 15px;
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .lien-demo {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .lien-code {
+            border: 1px solid #333;
+            color: #333;
+        }
+        
+        /* ==================================== */
+        /* 5. SECTIONS A PROPOS ET CONTACT */
+        /* ==================================== */
+        .section-a-propos {
+            background-color: white;
+        }
+
+        .liste-competences {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        .section-contact {
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        .section-contact a {
+            color: #8bbff7;
+        }
+
+        address {
+            font-style: normal;
+            margin-top: 15px;
+        }
+
+        /* ==================================== */
+        /* 6. PIED DE PAGE */
+        /* ==================================== */
+        footer {
+            background: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+        }
+
+
+        /* ==================================== */
+        /* 7. RESPONSIVE DESIGN - MEDIA QUERIES */
+        /* ==================================== */
+
+        /* Écrans Moyens (Tablettes, à partir de 600px) */
+        @media (min-width: 600px) {
+            
+            /* Grille de Projets : 2 colonnes */
+            .grille-projets {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            /* Compétences : affichage sur deux colonnes */
+            .liste-competences {
+                columns: 2;
+            }
+
+            /* Augmentation de la taille de police Hero */
+            .hero h2 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+        }
+
+        /* Grands Écrans (Ordinateurs de bureau, à partir de 992px) */
+        @media (min-width: 992px) {
+            
+            /* Grille de Projets : 3 colonnes */
+            .grille-projets {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* Entête : padding plus large */
+            header, section {
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>[Votre Prénom] Dev Web</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#a-propos">À Propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <h2>Bienvenue ! Je suis [Votre Nom]</h2>
+            <p>Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes en utilisant HTML et CSS.</p>
+            <a href="#projets" class="cta-button">Voir mes Projets</a>
+        </section>
+
+        <section id="projets" class="section-projets">
+            <h2>Mes Réalisations</h2>
+            
+            <div class="grille-projets">
+                
+                <article class="carte-projet">
+                    <img src="https://via.placeholder.com/400x200?text=Projet+1" alt="Aperçu du Projet 1">
+                    <h3>Site Vitrine d'Entreprise</h3>
+                    <p>Création d'un site vitrine 100% responsive pour un client fictif, axé sur la vitesse de chargement et l'accessibilité.</p>
+                    <a href="#" target="_blank" class="lien-demo">Démo Live</a>
+                    <a href="#" target="_blank" class="lien-code">Code Source</a>
+                </article>
+
+                <article class="carte-projet">
+                    <img src="https://via.placeholder.com/400x200?text=Projet+2" alt="Aperçu du Projet 2">
+                    <h3>Refonte de Blog</h3>
+                    <p>Refonte complète du design d'un blog personnel en utilisant CSS Grid pour une mise en page magazine moderne.</p>
+                    <a href="#" target="_blank" class="lien-demo">Démo Live</a>
+                    <a href="#" target="_blank" class="lien-code">Code Source</a>
+                </article>
+
+                 <article class="carte-projet">
+                    <img src="https://via.placeholder.com/400x200?text=Projet+3" alt="Aperçu du Projet 3">
+                    <h3>Page d'Atterrissage (Landing Page)</h3>
+                    <p>Création d'une page de capture simple et efficace, intégrant des animations CSS subtiles et des formulaires stylisés.</p>
+                    <a href="#" target="_blank" class="lien-demo">Démo Live</a>
+                    <a href="#" target="_blank" class="lien-code">Code Source</a>
+                </article>
+                
+                </div>
+        </section>
+
+        <section id="a-propos" class="section-a-propos">
+            <h2>À Propos de Moi</h2>
+            <p>Je suis un développeur passionné par la **maîtrise du front-end** et l'art de transformer une maquette en une expérience utilisateur fluide. J'ai une préférence pour les solutions simples, maintenables et entièrement conçues à partir de HTML/CSS.</p>
+            
+            <h3>Mes Compétences Clés</h3>
+            <ul class="liste-competences">
+                <li>**HTML5 Sémantique**</li>
+                <li>**CSS3 Avancé**</li>
+                <li>Responsive Design / Media Queries</li>
+                <li>Flexbox & CSS Grid</li>
+                <li>Design Mobile-First</li>
+                <li>Accessibilité Web (ARIA)</li>
+                <li>Optimisation de Performance</li>
+                <li>Préprocesseurs (SCSS/Less - si applicable)</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="section-contact">
+            <h2>Me Contacter</h2>
+            <p>J'adore collaborer sur de nouveaux projets ! N'hésitez pas à me contacter pour discuter d'une opportunité.</p>
+            <address>
+                Email : <a href="mailto:votre.email@exemple.com">votre.email@exemple.com</a><br>
+                GitHub : <a href="https://github.com/votreprofil" target="_blank">github.com/[votreprofil]</a><br>
+                LinkedIn : <a href="https://linkedin.com/in/votreprofil" target="_blank">linkedin.com/in/[votreprofil]</a>
+            </address>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 | Portfolio de [Votre Prénom]. Tous droits réservés.</p>
+    </footer>
+
+<!--
+PORTFOLIO de GEMINI
+
+ADRESSE EMAIL :     halleymariomen@gmail.com
+
+https://gemini.google.com/app/28f75ecab468e54f
+https://gemini.google.com/app/28f75ecab468e54f    
+-->
+
+</body>
+</html>

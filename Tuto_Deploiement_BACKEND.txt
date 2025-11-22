@@ -17,6 +17,7 @@ Dans    OPEN Git Bash HERE , on saisit les COMMANDES suivantes :
 
 
 
+
 AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT
 $ git init
 Initialized empty Git repository in D:/PYTHON DJANGO HOPES/github_DEPLOIEMENT/.g
@@ -93,13 +94,30 @@ To https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.git
    936768c..ae20ff1  main -> main
 
 AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ ^C
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git add .
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git commit -m "Modification Fichier"
+[main a1769c5] Modification Fichier
+ 1 file changed, 89 insertions(+), 1 deletion(-)
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.22 KiB | 1.22 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.git
+   ae20ff1..a1769c5  main -> main
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
 $
-
-
-
-
-
-
 
 
 

@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio | ANDRIANTSIMBAHARILANTO Halley Mario</title>
+    <title>Mon Portfolio | [Votre Nom]</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
         /* ==================================== */
-        /* 1. RÉINITIALISATION ET BASES (Mobile-First) */
+        /* 1. RÉINITIALISATION ET BASES */
         /* ==================================== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Active le défilement fluide */
         }
 
         body {
@@ -33,7 +39,7 @@
         }
 
         a {
-            color: #007bff;
+            color: #10c69d; /* Couleur d'accent : Vert Émeraude */
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -43,7 +49,7 @@
         }
 
         /* ==================================== */
-        /* 2. EN-TÊTE ET NAVIGATION (Mobile-First) */
+        /* 2. EN-TÊTE ET NAVIGATION */
         /* ==================================== */
         header {
             background: #333;
@@ -61,7 +67,6 @@
             font-size: 1.4em;
         }
         
-        /* Navigation (Masquée par défaut sur mobile - ici on la garde simple) */
         nav ul {
             list-style: none;
             display: flex;
@@ -85,13 +90,36 @@
         }
 
         /* ==================================== */
-        /* 3. SECTION ACCUEIL (HERO) */
+        /* 3. SECTION ACCUEIL (HERO) AVEC PARALLAXE */
         /* ==================================== */
         .hero {
-            background: #007bff;
+            background-image: url('images/hero-bg.jpg'); /* REMPLACER PAR VOTRE IMAGE */
+            background-attachment: scroll; /* Par défaut sur mobile */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            z-index: 1; 
             color: white;
             text-align: center;
-            padding: 80px 5%; /* Légèrement moins de padding sur mobile */
+            padding: 100px 5%;
+        }
+
+        /* Overlay pour lisibilité */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); 
+            z-index: -1;
+        }
+
+        .hero h2, .hero p, .cta-button {
+            position: relative;
+            z-index: 10;
         }
 
         .hero h2 {
@@ -106,7 +134,7 @@
 
         .cta-button {
             background-color: white;
-            color: #007bff;
+            color: #10c69d; /* Couleur d'accent */
             padding: 10px 20px;
             border-radius: 5px;
             font-weight: bold;
@@ -121,7 +149,7 @@
         }
 
         /* ==================================== */
-        /* 4. GRILLE DE PROJETS (Responsive avec Grid) */
+        /* 4. GRILLE DE PROJETS */
         /* ==================================== */
         .section-projets h2 {
             text-align: center;
@@ -130,8 +158,7 @@
 
         .grille-projets {
             display: grid;
-            /* Une seule colonne sur mobile par défaut */
-            grid-template-columns: 1fr; 
+            grid-template-columns: 1fr; /* 1 colonne sur mobile */
             gap: 30px; 
             max-width: 1200px;
             margin: 0 auto;
@@ -176,7 +203,7 @@
         }
 
         .lien-demo {
-            background-color: #007bff;
+            background-color: #10c69d; /* Couleur d'accent */
             color: white;
         }
 
@@ -186,34 +213,142 @@
         }
         
         /* ==================================== */
-        /* 5. SECTIONS A PROPOS ET CONTACT */
+        /* 5. SECTION TÉMOIGNAGES */
+        /* ==================================== */
+        .section-temoignages {
+            background-color: #e9ecef;
+            text-align: center;
+        }
+
+        .grille-temoignages {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .carte-temoignage {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            border-left: 5px solid #10c69d; /* Couleur d'accent */
+        }
+
+        .citation {
+            font-style: italic;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .citation::before {
+            content: "\201C";
+            font-size: 3em;
+            color: #10c69d; /* Couleur d'accent */
+            position: absolute;
+            top: -15px;
+            left: 0;
+            line-height: 0.5;
+        }
+
+        .auteur {
+            text-align: right;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* ==================================== */
+        /* 6. SECTION A PROPOS (avec Photo) */
         /* ==================================== */
         .section-a-propos {
             background-color: white;
         }
-
-        .liste-competences {
-            list-style: disc;
-            margin-left: 20px;
+        
+        .contenu-a-propos {
+            display: flex; 
+            flex-direction: column; 
+            gap: 40px;
+            align-items: flex-start;
         }
 
+        .image-profil img {
+            width: 150px; 
+            height: 150px;
+            border-radius: 50%; 
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 20px auto; 
+            border: 5px solid #10c69d; /* Couleur d'accent */
+        }
+
+        .texte-a-propos {
+             flex-grow: 1;
+        }
+
+        .liste-competences {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        
+        /* Style pour les icônes de compétences */
+        .icone-skill {
+            color: #10c69d; /* Couleur d'accent */
+            margin-right: 8px;
+            width: 20px; 
+            text-align: center;
+        }
+
+        /* ==================================== */
+        /* 7. SECTION CONTACT (Stylisé) */
+        /* ==================================== */
         .section-contact {
-            background-color: #333;
+            background-color: #2c3e50; 
             color: white;
             text-align: center;
         }
 
-        .section-contact a {
-            color: #8bbff7;
+        .section-contact h2 {
+            color: white;
         }
 
-        address {
-            font-style: normal;
-            margin-top: 15px;
+        .liens-sociaux {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .bouton-social {
+            color: white;
+            background-color: #10c69d; /* Couleur d'accent */
+            border-radius: 8px;
+            padding: 15px 25px;
+            width: 150px;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .bouton-social:hover {
+            background-color: #0d8b6c; 
+            transform: translateY(-5px);
+            text-decoration: none;
+        }
+
+        .bouton-social i {
+            margin-bottom: 10px;
         }
 
         /* ==================================== */
-        /* 6. PIED DE PAGE */
+        /* 8. PIED DE PAGE */
         /* ==================================== */
         footer {
             background: #222;
@@ -225,29 +360,53 @@
 
 
         /* ==================================== */
-        /* 7. RESPONSIVE DESIGN - MEDIA QUERIES */
+        /* 9. RESPONSIVE DESIGN - MEDIA QUERIES */
         /* ==================================== */
 
         /* Écrans Moyens (Tablettes, à partir de 600px) */
         @media (min-width: 600px) {
             
-            /* Grille de Projets : 2 colonnes */
-            .grille-projets {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            .hero {
+                background-attachment: fixed; /* Parallaxe activé */
             }
 
-            /* Compétences : affichage sur deux colonnes */
-            .liste-competences {
-                columns: 2;
-            }
-
-            /* Augmentation de la taille de police Hero */
             .hero h2 {
                 font-size: 2.5em;
             }
 
             .hero p {
                 font-size: 1.2em;
+            }
+
+            /* Grille de Projets : 2 colonnes */
+            .grille-projets {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            /* Grille de Témoignages : 2 colonnes */
+            .grille-temoignages {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Mise en page À Propos côte à côte */
+            .contenu-a-propos {
+                flex-direction: row; 
+            }
+
+            .image-profil {
+                flex-shrink: 0;
+                margin-right: 40px;
+            }
+            
+            .image-profil img {
+                width: 200px; 
+                height: 200px;
+                margin: 0;
+            }
+
+            /* Compétences : affichage sur deux colonnes */
+            .liste-competences {
+                columns: 2;
             }
         }
 
@@ -259,28 +418,26 @@
                 grid-template-columns: repeat(3, 1fr);
             }
 
-            /* Entête : padding plus large */
+            /* Entête et Sections : padding plus large */
             header, section {
                 padding-left: 10%;
                 padding-right: 10%;
             }
-
-            header h1 {
-                font-size: 1.8em;
+        }
+        
+        /* Pour les très petits écrans, on désactive le parallaxe pour la performance */
+        @media (max-width: 599px) {
+            .hero {
+                background-attachment: scroll; /* Défilement normal sur mobile */
             }
         }
     </style>
-
-<!-- 
-    https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css 
--->
-
 </head>
 <body>
 
     <header>
         <div class="logo">
-            <h1>Halley Mario Dev Web</h1>
+            <h1>[Votre Prénom] Dev Web</h1>
         </div>
         <nav>
             <ul>
@@ -294,8 +451,8 @@
 
     <main>
         <section id="accueil" class="hero">
-            <h2>Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario</h2>
-            <p>Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes en utilisant HTML et CSS.</p>
+            <h2>Bienvenue ! Je suis [Votre Nom]</h2>
+            <p>Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.</p>
             <a href="#projets" class="cta-button">Voir mes Projets</a>
         </section>
 
@@ -305,12 +462,9 @@
             <div class="grille-projets">
                 
                 <article class="carte-projet">
-<!-- 
-                    <img src="https://via.placeholder.com/400x200?text=Projet+1" alt="Aperçu du Projet 1"> 
--->
-                    <img src="https://via.placeholder.com/400x200?text=Projet+1" alt="Aperçu du Projet 1">                    
+                    <img src="https://via.placeholder.com/400x200?text=Projet+1" alt="Aperçu du Projet 1">
                     <h3>Site Vitrine d'Entreprise</h3>
-                    <p>Création d'un site vitrine 100% responsive pour un client fictif, axé sur la vitesse de chargement et l'accessibilité.</p>
+                    <p>Création d'un site vitrine 100% responsive, axé sur la vitesse de chargement et l'accessibilité.</p>
                     <a href="#" target="_blank" class="lien-demo">Démo Live</a>
                     <a href="#" target="_blank" class="lien-code">Code Source</a>
                 </article>
@@ -323,7 +477,7 @@
                     <a href="#" target="_blank" class="lien-code">Code Source</a>
                 </article>
 
-                 <article class="carte-projet">
+                <article class="carte-projet">
                     <img src="https://via.placeholder.com/400x200?text=Projet+3" alt="Aperçu du Projet 3">
                     <h3>Page d'Atterrissage (Landing Page)</h3>
                     <p>Création d'une page de capture simple et efficace, intégrant des animations CSS subtiles et des formulaires stylisés.</p>
@@ -331,39 +485,73 @@
                     <a href="#" target="_blank" class="lien-code">Code Source</a>
                 </article>
                 
-                </div>
+            </div>
         </section>
+        
+        <section id="temoignages" class="section-temoignages">
+            <h2>Ce qu'ils disent de moi</h2>
+            
+            <div class="grille-temoignages">
+                
+                <article class="carte-temoignage">
+                    <p class="citation">"Le travail de [Votre Nom] sur notre site a été exceptionnel. La qualité du code et le respect du responsive design ont dépassé nos attentes."</p>
+                    <p class="auteur">**Sophie D.** - Chef de Projet</p>
+                </article>
+
+                <article class="carte-temoignage">
+                    <p class="citation">"Très réactif et d'une grande rigueur technique. Le portfolio est un exemple parfait de ce qu'on peut réaliser avec uniquement HTML et CSS."</p>
+                    <p class="auteur">**Marc L.** - Client Indépendant</p>
+                </article>
+                
+            </div>
+        </section>
+
 
         <section id="a-propos" class="section-a-propos">
             <h2>À Propos de Moi</h2>
-            <p>Je suis un développeur passionné par la **maîtrise du front-end** et l'art de transformer une maquette en une expérience utilisateur fluide. J'ai une préférence pour les solutions simples, maintenables et entièrement conçues à partir de HTML/CSS.</p>
             
-            <h3>Mes Compétences Clés</h3>
-            <ul class="liste-competences">
-                <li>**HTML5 Sémantique**</li>
-                <li>**CSS3 Avancé**</li>
-                <li>Responsive Design / Media Queries</li>
-                <li>Flexbox & CSS Grid</li>
-                <li>Design Mobile-First</li>
-                <li>Accessibilité Web (ARIA)</li>
-                <li>Optimisation de Performance</li>
-                <li>Préprocesseurs (SCSS/Less - si applicable)</li>
-            </ul>
+            <div class="contenu-a-propos">
+                
+                <div class="image-profil">
+                    <img src="images/votre-photo.jpg" alt="Photo de profil de [Votre Nom]">
+                </div>
+
+                <div class="texte-a-propos">
+                    <p>Je suis un développeur passionné par la **maîtrise du front-end** et l'art de transformer une maquette en une expérience utilisateur fluide. J'ai une préférence pour les solutions simples, maintenables et entièrement conçues à partir de HTML/CSS.</p>
+                    
+                    <h3>Mes Compétences Clés</h3>
+                    <ul class="liste-competences">
+                        <li><i class="fab fa-html5 fa-lg icone-skill"></i> **HTML5 Sémantique**</li>
+                        <li><i class="fab fa-css3-alt fa-lg icone-skill"></i> **CSS3 Avancé**</li>
+                        <li><i class="fas fa-mobile-alt fa-lg icone-skill"></i> Responsive Design / Media Queries</li>
+                        <li><i class="fas fa-layer-group fa-lg icone-skill"></i> Flexbox & CSS Grid</li>
+                        <li><i class="fas fa-tachometer-alt fa-lg icone-skill"></i> Optimisation de Performance</li>
+                        <li><i class="fas fa-universal-access fa-lg icone-skill"></i> Accessibilité Web (ARIA)</li>
+                        <li><i class="fas fa-palette fa-lg icone-skill"></i> Design Mobile-First</li>
+                        <li><i class="fab fa-sass fa-lg icone-skill"></i> Préprocesseurs (SCSS/Less - si applicable)</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <section id="contact" class="section-contact">
             <h2>Me Contacter</h2>
-            <p>J'adore collaborer sur de nouveaux projets ! N'hésitez pas à me contacter pour discuter d'une opportunité.</p>
-            <address>
-<!-- 
-                Email : <a href="mailto:votre.email@exemple.com">votre.email@exemple.com</a><br>
--->
-                Email : <a href="mailto:halleymariomen@gmail.com">halleymariomen@gmail.com</a><br>                
-                GitHub : <a href="https://github.com/Mariogit20" target="_blank">github.com/Mariogit20</a><br>
-<!-- 
-                LinkedIn : <a href="https://linkedin.com/in/votreprofil" target="_blank">linkedin.com/in/[votreprofil]</a> 
--->
-            </address>
+            <p>N'hésitez pas à me contacter via les réseaux ou par email pour toute opportunité.</p>
+            
+            <div class="liens-sociaux">
+                <a href="mailto:votre.email@exemple.com" target="_blank" class="bouton-social">
+                    <i class="fas fa-envelope fa-2x"></i>
+                    <span>Email</span>
+                </a>
+                <a href="https://github.com/votreprofil" target="_blank" class="bouton-social">
+                    <i class="fab fa-github fa-2x"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/votreprofil" target="_blank" class="bouton-social">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
         </section>
     </main>
 
@@ -371,14 +559,6 @@
         <p>&copy; 2025 | Portfolio de [Votre Prénom]. Tous droits réservés.</p>
     </footer>
 
-<!--
-PORTFOLIO de GEMINI
-
-ADRESSE EMAIL :     halleymariomen@gmail.com
-
-https://gemini.google.com/app/28f75ecab468e54f
-https://gemini.google.com/app/28f75ecab468e54f    
--->
-
 </body>
 </html>
+

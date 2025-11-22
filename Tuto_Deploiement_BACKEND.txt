@@ -4,10 +4,98 @@ render.com
 
 https://dashboard.render.com/
 
-OUVRIR LE COMPTE   GITHUB
 
 
 B] HEBERGEMENT WEB    avec    GITHUB     d'un SITE WEB     FRONTEND    créé avec     html , css , js  :
+
+
+OUVRIR LE COMPTE   GITHUB
+
+B.2] : COMMANDES de DEPLOIEMENT dans GITHUB :
+
+Dans    OPEN Git Bash HERE , on saisit les COMMANDES suivantes :
+
+
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT
+$ git init
+Initialized empty Git repository in D:/PYTHON DJANGO HOPES/github_DEPLOIEMENT/.g
+it/
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT (master)
+$ git clone https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.git
+Cloning into 'Tuto_Deploiement_BACKEND'...
+fatal: unable to access 'https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.
+git/': Could not resolve host: github.com
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT (master)
+$ git clone https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.git
+Cloning into 'Tuto_Deploiement_BACKEND'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT (master)
+$ cd Tuto_Deploiement_BACKEND
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ code .
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git add *
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git commit -m "first commit"
+[main 936768c] first commit
+ 1 file changed, 371 insertions(+)
+ create mode 100644 index.html
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 3.31 KiB | 1.65 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.git
+   8f3bb97..936768c  main -> main
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git add .
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git commit-m "Ajout cdn"
+git: 'commit-m' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit-tree
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git commit -m "Ajout cdn"
+[main ae20ff1] Ajout cdn
+ 3 files changed, 25 insertions(+)
+ create mode 100644 .vscode/settings.json
+ create mode 100644 Tuto_Deploiement_BACKEND.txt
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git push
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 760 bytes | 380.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.git
+   936768c..ae20ff1  main -> main
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$
+
+
 
 
 

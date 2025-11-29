@@ -3,1307 +3,799 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio | ANDRIANTSIMBAHARILANTO Halley Mario</title>
-
-<!--    
-DEBUT ====================================> SITE WEB RESPONSIVE de Mario ::::::::::::::::::::::::::::
-DEBUT ====================================> SITE WEB RESPONSIVE de Mario ::::::::::::::::::::::::::::
-DEBUT ====================================> SITE WEB RESPONSIVE de Mario ::::::::::::::::::::::::::::
-DEBUT ====================================> SITE WEB RESPONSIVE de Mario ::::::::::::::::::::::::::::
-DEBUT ====================================> SITE WEB RESPONSIVE de Mario ::::::::::::::::::::::::::::
-
-samedi 29 novemebre 2025 :::::::::::::::::::::::::::::::
--->
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<!--    
-samedi 29 novemebre 2025 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-FIN   ====================================> SITE WEB RESPONSIVE de Mario !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> SITE WEB RESPONSIVE de Mario !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> SITE WEB RESPONSIVE de Mario !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> SITE WEB RESPONSIVE de Mario !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> SITE WEB RESPONSIVE de Mario !!!!!!!!!!!!!!!!!!!!!!!!!!!!
--->
-
-<!--  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
--->
-  <link href="bootstrap-5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
-
+    <title>Portfolio - ANDRIANTSIMBAHARILANTO Halley Mario</title>
     
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> -->
-    <link rel="stylesheet" href="Font-Awesome-7.x/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="bootstrap-5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+/* =====================================================
+    DÉFINITION DES VARIABLES ET STYLES GÉNÉRAUX
+===================================================== 
+*/
+:root {
+    --couleur-primaire: #3a7bd5; /* Bleu principal */
+    --couleur-secondaire: #e74c3c; /* Rouge accentuation */
+    --couleur-texte: #2c3e50; /* Gris-bleu foncé */
+    --couleur-fond-clair: #f7f9fc;
+    --font-principale: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-principale);
+    color: var(--couleur-texte);
+    line-height: 1.6;
+    background-color: white;
+    margin: 0;
+    padding-top: 56px; /* Espace pour la barre de navigation fixe de Bootstrap */
+}
+
+/* Styles pour les titres */
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--couleur-primaire);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-top: 2rem; /* Espace pour les ancres de navigation */
+}
+
+/* Soulignement stylisé pour les titres H2 */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--couleur-secondaire);
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
 
 
+/* =====================================================
+    STYLES DE LA BARRE DE NAVIGATION (NAVBAR)
+===================================================== 
+*/
+.navbar {
+    background-color: white; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1030; /* Assure que la barre de navigation est au-dessus du contenu */
+}
 
+/* Amélioration de la couleur des liens de navigation */
+.navbar-nav .nav-link {
+    color: var(--couleur-texte) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
 
-  
-  <style>
-/*
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-*/  
-    .dropdown-submenu {
-      position: relative;
+.navbar-nav .nav-link:hover {
+    color: var(--couleur-primaire) !important;
+}
+
+/* Conteneur pour les sous-menus (dropdown-submenu) */
+.dropdown-submenu {
+    position: relative;
+}
+
+/* Styles pour les sous-menus de niveau 2 (dans .dropdown-submenu) */
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+    border-radius: 0 5px 5px 5px;
+}
+
+/* Cacher les sous-menus par défaut en mode desktop (hover) */
+@media (min-width: 992px) {
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Styles spécifiques pour le menu en mode mobile (au-dessous de 992px) */
+@media (max-width: 991.98px) {
+    .dropdown-menu {
+        border-radius: 0;
+        background-color: var(--couleur-fond-clair);
     }
     .dropdown-submenu .dropdown-menu {
-      top: 0;
-      left: 100%;
-      margin-top: -1px;
-      /* AJOUTS POUR SUPPRIMER L'ESPACE */
-      padding: 0;
-      margin: 0;
+        position: static;
+        left: auto;
+        border: none;
+        padding-left: 20px;
+        box-shadow: none;
     }
-    .dropdown-submenu .dropdown-menu li {
-      margin-bottom: 0;
+    .dropdown-submenu > a::after {
+        /* Ajout d'une flèche pour indiquer l'existence d'un sous-menu en mode mobile */
+        display: inline-block;
+        margin-left: .5em;
+        vertical-align: middle;
+        content: "▶"; /* Flèche vers la droite */
+        transition: transform 0.3s;
     }
-
-    /* Desktop hover */
-    @media (min-width: 992px) {
-      .dropdown-submenu:hover > .dropdown-menu {
-        display: block;
-      }
+    /* Rotation de la flèche lorsque le sous-menu est ouvert */
+    .dropdown-submenu .dropdown-menu.show ~ a::after {
+        transform: rotate(90deg);
+        content: "▼"; /* Flèche vers le bas */
     }
+}
 
-    /* Mobile/tablette accordéon */
-    @media (max-width: 991.98px) {
-      .dropdown-menu {
-        display: none;
-      }
-      .dropdown-menu.show {
-        display: block;
-      }
+
+/* =====================================================
+    SECTION D'ACCUEIL (HERO)
+===================================================== 
+*/
+#accueil.hero {
+    /* Style du titre H2 avec effet text-stroke/background-clip (fragment original) */
+    font-size: 5vw;
+    -webkit-text-stroke: 2px red;
+    color: transparent;
+    background-image: url(image/chicago.jpg);
+    background-clip: text;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-shadow: 10px 2px 2px rgb(199, 188, 188);
+    
+    /* Amélioration du layout pour le centrage */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh; 
+    padding: 4rem 1rem;
+    background-color: var(--couleur-fond-clair); /* Fond de secours si image n'est pas utilisée pour le hero */
+}
+
+#accueil.hero h2 {
+    margin-top: 0;
+}
+
+/* Style du paragraphe de la section Hero */
+#accueil.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* =====================================================
+    BOUTONS ET CTA (APPELS À L'ACTION)
+===================================================== 
+*/
+.cta-button, .w3-button.w3-blue {
+    /* Styles généraux des boutons d'action */
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    margin-top: 1rem;
+    background-color: var(--couleur-secondaire); /* Rouge accent */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    font-size: 1rem;
+}
+
+.cta-button:hover, .w3-button.w3-blue:hover {
+    background-color: #c0392b; /* Rouge légèrement plus foncé */
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Styles spécifiques pour les petits boutons de compétences (tags) */
+.w3-button.w3-blue[style*="font-size:12px"] {
+    font-size: 12px !important;
+    padding: 0.4rem 0.8rem;
+    margin-right: 0.5rem;
+    text-transform: none;
+    background-color: var(--couleur-primaire) !important;
+}
+.w3-button.w3-blue[style*="font-size:12px"]:hover {
+    background-color: #2980b9 !important;
+}
+
+/* =====================================================
+    SECTION SITE WEB RESPONSIVE (GRILLE BOOTSTRAP)
+===================================================== 
+*/
+#responsive_mario {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#responsive_mario img {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+/* =====================================================
+    SECTION PROJETS
+===================================================== 
+*/
+.section-projets {
+    background-color: var(--couleur-fond-clair);
+    padding: 4rem 1rem;
+}
+
+.grille-projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carte-projet {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.carte-projet:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.carte-projet img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.carte-projet h3 {
+    color: var(--couleur-primaire);
+    padding: 1rem 1rem 0;
+    margin-top: 0;
+    font-size: 1.4rem;
+    text-align: left; /* Annule l'alignement central du h2 */
+}
+
+.carte-projet p {
+    padding: 0 1rem;
+    font-size: 0.95rem;
+}
+
+.lien-demo, .lien-code {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem 1rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.lien-demo {
+    background-color: var(--couleur-primaire);
+    color: white;
+}
+
+.lien-code {
+    background-color: #f1f1f1;
+    color: var(--couleur-texte);
+    border: 1px solid #ddd;
+}
+.lien-demo:hover, .lien-code:hover {
+    opacity: 0.8;
+}
+
+/* =====================================================
+    SECTION TÉMOIGNAGES
+===================================================== 
+*/
+.section-temoignages {
+    padding: 4rem 1rem;
+}
+
+.grille-temoignages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.carte-temoignage {
+    background-color: var(--couleur-fond-clair);
+    border-left: 5px solid var(--couleur-secondaire);
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.citation {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.auteur {
+    text-align: right;
+    font-weight: 600;
+    color: var(--couleur-primaire);
+}
+
+/* =====================================================
+    SECTION À PROPOS
+===================================================== 
+*/
+.section-a-propos {
+    padding: 4rem 1rem;
+    background-color: var(--couleur-fond-clair);
+}
+
+.contenu-a-propos {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Par défaut en colonne pour mobile */
+    gap: 3rem;
+    align-items: center;
+    text-align: center;
+}
+
+/* Mise en page pour Desktop (à partir de 768px) */
+@media (min-width: 768px) {
+    .contenu-a-propos {
+        flex-direction: row; /* Côté à côté sur desktop */
+        text-align: left;
     }
-/*
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-*/	
-  </style>
+}
 
+.image-profil {
+    flex-shrink: 0;
+}
 
+.image-profil img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--couleur-secondaire);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
+.texte-a-propos {
+    flex-grow: 1;
+}
 
+.texte-a-propos h3 {
+    color: var(--couleur-texte);
+    margin-top: 1rem;
+    text-align: left;
+}
 
-    <style>
-        /* ==================================== */
-        /* 1. RÉINITIALISATION ET BASES */
-        /* ==================================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+.liste-competences {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 1rem;
+    justify-content: center; /* Centrage sur mobile */
+}
+@media (min-width: 768px) {
+    .liste-competences {
+        justify-content: flex-start; /* Aligner à gauche sur desktop */
+    }
+}
 
-        html {
-            scroll-behavior: smooth; /* Active le défilement fluide */
-        }
+.liste-competences li {
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border-left: 4px solid var(--couleur-primaire);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
 
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;                   /*  COULEUR DE LA POLICE  */
-        }
+.icone-skill {
+    color: var(--couleur-secondaire);
+    margin-right: 8px;
+}
 
-        h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        section {
-            padding: 60px 5%;
-            margin-bottom: 20px;
-        }
-
-        a {
-/*            color: #10c69d;             */        /* Couleur d'accent : Vert Émeraude */
-/*            color: #2df505;             */    /* PHRASE :     Mon Logo   */            
-            color: #000000;                 /* PHRASE :     Mon Logo   */                        
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* ==================================== */
-        /* 2. EN-TÊTE ET NAVIGATION */
-        /* ==================================== */
-/*        
-        header {
-            background: #06a8c5;               COULEUR DE FOND    de la    NavBar    MENU RESPONSIVE MULTI NIVEAUX   
-            color: white;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+/* =====================================================
+    SECTION CONTACT
+===================================================== 
 */
+.section-contact {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: white;
+}
 
-/*
-        header h1 {
-            font-size: 1.4em;
-        }
+.liens-sociaux {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.bouton-social {
+    color: var(--couleur-texte);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bouton-social:hover {
+    color: var(--couleur-primaire);
+    transform: translateY(-5px);
+}
+
+.bouton-social i {
+    font-size: 2.5rem !important;
+    margin-bottom: 5px;
+}
+
+/* =====================================================
+    PIED DE PAGE (FOOTER)
+===================================================== 
 */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--couleur-texte);
+    color: white;
+    font-size: 0.8rem;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            font-weight: bold;
-            padding: 5px 8px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        nav ul li a:hover {        
-                
-/*
-            background-color: #555;
-*/
-/*
-            background-color: #4d05f5;        
-*/
-            background-color: #05f541;            
-            text-decoration: none;
-        }
-
-        /* ==================================== */
-        /* 3. SECTION ACCUEIL (HERO) AVEC PARALLAXE */
-        /* ==================================== */
-        .hero {
-            background-image: url('image/image_Terre.jpg'); /* REMPLACER PAR VOTRE IMAGE */     /* IMAGE DE FOND     en BAS    de la PHRASE :        Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.    */
-            background-attachment: scroll; /* Par défaut sur mobile */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-            z-index: 1; 
-            color: white;
-            text-align: center;
-            padding: 100px 5%;
-        }
-
-        /* Overlay pour lisibilité */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4); 
-            z-index: -1;
-        }
-
-        .hero h2, .hero p, .cta-button {
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1em;
-            margin-bottom: 25px;
-        }
-
-        .cta-button {
-/*            background-color: white;      */
-            color: #0906c5; /* Couleur d'accent */                   /*  PHRASE :     Voir mes Projets  */
-/*            color: #10c69d;     */     /* Couleur d'accent */            
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block;
-            transition: background-color 0.3s, transform 0.3s;
-					 
-					 
-					 
-					 
-/*
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
-*/
-background-image: -webkit-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
-background-image: -moz-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
-background-image: -ms-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
-background-image: -o-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
-background-image: linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);							 
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#D60F0F',endColorstr='#FFDD00', GradientType=1);		
-/*
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
-*/
-        }
-
-        .cta-button:hover {
-/*            background-color: #eee;         */
-            transform: translateY(-2px);
-            text-decoration: none;
-
-            color:yellow;
-
-
-            
-
-/*
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" :::::::::::
-*/
-/*
-background-image: -webkit-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
-background-image: -moz-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
-background-image: -ms-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
-background-image: -o-linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);
-background-image: linear-gradient(right top, #D60F0F 0%, #FFDD00 100%);							 
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#D60F0F',endColorstr='#FFDD00', GradientType=1);		
-*/
-background-image: -webkit-linear-gradient(left top, purple 0%, green 100%);
-background-image: -moz-linear-gradient(left top, purple 0%, green 100%);
-background-image: -ms-linear-gradient(left top, purple 0%, green 100%);
-background-image: -o-linear-gradient(left top, purple 0%, green 100%);
-background-image: linear-gradient(left top, purple 0%, green 100%);		
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='purple',endColorstr='green', GradientType=1);		
-/*
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
-"""""COULEUR DE FOND"""""   en   """""GRADIENT"""""   du   BOUTON    """""Voir mes Projets""""" !!!!!!!!!!!
-*/            
-        }
-
-        /* ==================================== */
-        /* 4. GRILLE DE PROJETS */
-        /* ==================================== */
-        .section-projets h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .grille-projets {
-            display: grid;
-            grid-template-columns: 1fr; /* 1 colonne sur mobile */
-            gap: 30px; 
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .carte-projet {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s, transform 0.3s;
-        }
-
-        .carte-projet:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .carte-projet img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .carte-projet h3 {
-            padding: 15px 15px 0;
-            margin-top: 0;
-        }
-
-        .carte-projet p {
-            padding: 0 15px;
-            margin-bottom: 15px;
-            font-size: 0.95em;
-        }
-
-        .lien-demo, .lien-code {
-            margin-left: 15px;
-            display: inline-block;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-
-        .lien-demo {
-            background-color: #10c69d; /* Couleur d'accent */
-            color: white;
-        }
-
-        .lien-code {
-            border: 1px solid #333;
-            color: #333;
-        }
-        
-        /* ==================================== */
-        /* 5. SECTION TÉMOIGNAGES */
-        /* ==================================== */
-        .section-temoignages {
-            background-color: #e9ecef;
-            text-align: center;
-        }
-
-        .grille-temoignages {
-            display: grid;
-            grid-template-columns: 1fr; 
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .carte-temoignage {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            text-align: left;
-            border-left: 5px solid #10c69d; /* Couleur d'accent */
-        }
-
-        .citation {
-            font-style: italic;
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .citation::before {
-            content: "\201C";
-            font-size: 3em;
-            color: #10c69d; /* Couleur d'accent */
-            position: absolute;
-            top: -15px;
-            left: 0;
-            line-height: 0.5;
-        }
-
-        .auteur {
-            text-align: right;
-            font-weight: bold;
-            color: #555;
-        }
-
-        /* ==================================== */
-        /* 6. SECTION A PROPOS (avec Photo) */
-        /* ==================================== */
-        .section-a-propos {
-            background-color: white;
-        }
-        
-        .contenu-a-propos {
-            display: flex; 
-            flex-direction: column; 
-            gap: 40px;
-            align-items: flex-start;
-        }
-
-        .image-profil img {
-            width: 150px; 
-            height: 150px;
-            border-radius: 50%; 
-            object-fit: cover;
-            display: block;
-            margin: 0 auto 20px auto; 
-            border: 5px solid #10c69d; /* Couleur d'accent */
-        }
-
-        .texte-a-propos {
-             flex-grow: 1;
-        }
-
-        .liste-competences {
-            list-style: none;
-            margin-left: 0;
-            padding-left: 0;
-        }
-        
-        /* Style pour les icônes de compétences */
-        .icone-skill {
-            color: #10c69d; /* Couleur d'accent */
-            margin-right: 8px;
-            width: 20px; 
-            text-align: center;
-        }
-
-        /* ==================================== */
-        /* 7. SECTION CONTACT (Stylisé) */
-        /* ==================================== */
-        .section-contact {
-            background-color: #2c3e50; 
-            color: white;
-            text-align: center;
-        }
-
-        .section-contact h2 {
-            color: white;
-        }
-
-        .liens-sociaux {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .bouton-social {
-            color: white;
-            background-color: #10c69d; /* Couleur d'accent */
-            border-radius: 8px;
-            padding: 15px 25px;
-            width: 150px;
-            transition: background-color 0.3s, transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .bouton-social:hover {
-            background-color: #0d8b6c; 
-            transform: translateY(-5px);
-            text-decoration: none;
-        }
-
-        .bouton-social i {
-            margin-bottom: 10px;
-        }
-
-        /* ==================================== */
-        /* 8. PIED DE PAGE */
-        /* ==================================== */
-        footer {
-            background: #222;
-            color: #aaa;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 0.9em;
-        }
-
-
-        /* ==================================== */
-        /* 9. RESPONSIVE DESIGN - MEDIA QUERIES */
-        /* ==================================== */
-
-        /* Écrans Moyens (Tablettes, à partir de 600px) */
-        @media (min-width: 600px) {
-            
-            .hero {
-                background-attachment: fixed; /* Parallaxe activé */
-            }
-
-            .hero h2 {
-                font-size: 2.5em;
-            }
-
-            .hero p {
-                font-size: 1.2em;
-            }
-
-            /* Grille de Projets : 2 colonnes */
-            .grille-projets {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-            
-            /* Grille de Témoignages : 2 colonnes */
-            .grille-temoignages {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            /* Mise en page À Propos côte à côte */
-            .contenu-a-propos {
-                flex-direction: row; 
-            }
-
-            .image-profil {
-                flex-shrink: 0;
-                margin-right: 40px;
-            }
-            
-            .image-profil img {
-                width: 200px; 
-                height: 200px;
-                margin: 0;
-            }
-
-            /* Compétences : affichage sur deux colonnes */
-            .liste-competences {
-                columns: 2;
-            }
-        }
-
-        /* Grands Écrans (Ordinateurs de bureau, à partir de 992px) */
-        @media (min-width: 992px) {
-            
-            /* Grille de Projets : 3 colonnes */
-            .grille-projets {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            /* Entête et Sections : padding plus large */
-/*
-            header, section {
-*/
-            section {
-                padding-left: 10%;
-                padding-right: 10%;
-            }
-        }
-        
-        /* Pour les très petits écrans, on désactive le parallaxe pour la performance */
-        @media (max-width: 599px) {
-            .hero {
-                background-attachment: scroll; /* Défilement normal sur mobile */
-            }
-        }
-    </style>    
+    </style>
 </head>
 <body>
 
-    <header>
-<!--
-        <div class="logo">
-            <h1>Halley Mario Dev Web</h1>
-        </div>
--->
-
-<!--
-        <nav>
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#a-propos">À Propos</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
--->
-
-    </header>
-
-
-
-
-
-
-<!--
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-
-menu responsive MULTI NIVEAUX ici
--->
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> -->
-<nav class="navbar navbar-expand-lg "     style="background-color: #48a2d6; "  >    
-<!-- <nav class="navbar navbar-expand-lg" >     -->
-  <div class="container-fluid" >
-<!--
-    <a class="navbar-brand" href="#">Mon Logo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
--->
-    <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
-    <div class="collapse navbar-collapse" id="navbarNav"  >        
-      <ul class="navbar-nav" >
-        <li class="nav-item"><a class="nav-link active" href="#"      style="color: black; " >Accueil</a></li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"      style="color: black; " >Services</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Service 1</a></li>
-            <li class="dropdown-submenu dropend">
-              <a class="dropdown-item dropdown-toggle" href="#">Service 2</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Sous-service A</a></li>
-                <li class="dropdown-submenu dropend">
-                  <a class="dropdown-item dropdown-toggle" href="#">Sous-service B</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">B - 1</a></li>
-                    <li class="dropdown-submenu dropend">
-                      <a class="dropdown-item dropdown-toggle" href="#">B - 2</a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">B - 2 - 1</a></li>
-                        <li><a class="dropdown-item" href="#">B - 2 - 2</a></li>
-                        <li><a class="dropdown-item" href="#">B - 2 - 3</a></li>
-                        <li><a class="dropdown-item" href="#">B - 2 - 4</a></li>
-                      </ul>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#accueil">Mario | DEV</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#accueil">Accueil</a>
                     </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a class="dropdown-item" href="#">Service 3</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item"><a class="nav-link" href="#"      style="color: black; " >Contact</a></li>
-
-        <li class="nav-item dropdown">		
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"      style="color: black; " >Formation</a>
-          <ul class="dropdown-menu">		
-            <li class="dropdown-submenu dropend">
-              <a class="dropdown-item dropdown-toggle" href="#">Informatique</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Sous-service A</a></li>
-                <li class="dropdown-submenu dropend">
-                  <a class="dropdown-item dropdown-toggle" href="#">Langage de Programmation</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">B - 1</a></li>
-                    <li class="dropdown-submenu dropend">
-                      <a class="dropdown-item dropdown-toggle" href="#">Frontend (côté Navigateur)</a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#react">React</a></li>
-                        <li><a class="dropdown-item" href="#vue">Vue</a></li>
-                        <li><a class="dropdown-item" href="#angular">Angular</a></li>
-                        <li><a class="dropdown-item" href="#jquery">JQuery</a></li>
-                      </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projets">Projets</a>
                     </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>		
-          </ul>
-        </li>		  
-			
-        <li class="nav-item dropdown">		
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"       style="color: black; " >Transport</a>
-          <ul class="dropdown-menu">		
-            <li class="dropdown-submenu dropend">
-              <a class="dropdown-item dropdown-toggle" href="#">Transport de Marchandises</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Sous-service A</a></li>
-                <li class="dropdown-submenu dropend">
-                  <a class="dropdown-item dropdown-toggle" href="#">Camions</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">B - 1</a></li>
-                    <li class="dropdown-submenu dropend">
-                      <a class="dropdown-item dropdown-toggle" href="#">Camions Frigorifiques</a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="diapo_Javascript_Page1.html#Exemple_de_Camion_Frigorifique_1">Exemple de Camion Frigorifique 1</a></li>
-                        <li><a class="dropdown-item" href="diapo_Javascript_Page1.html#Exemple_de_Camion_Frigorifique_2">Exemple de Camion Frigorifique 2</a></li>
-                        <li><a class="dropdown-item" href="diapo_Javascript_Page1.html#Exemple_de_Camion_Frigorifique_3">Exemple de Camion Frigorifique 3</a></li>
-                        <li><a class="dropdown-item" href="diapo_Javascript_Page1.html#Exemple_de_Camion_Frigorifique_4">Exemple de Camion Frigorifique 4</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>		
-          </ul>
-        </li>		  			
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"       style="color: black; " >Types de camions</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_tautliner">Le camion tautliner</a></li>
-            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_semi_remorque">Le camion semi-remorque</a></li>
-            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_frigorifique">Le camion frigorifique</a></li>
-            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_plateau">Le camion plateau</a></li>
-            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_fourgon">Le camion fourgon</a></li>                  
-            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_porte_char">Le camion porte-char</a></li>
-            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_benne">Le camion-benne</a></li>
-            <li><a class="dropdown-item" href="TransportRoutier_Main.html#Le_camion_citerne">Le camion-citerne</a></li>            
-          </ul>
-        </li>
-			
-      </ul>
-    </div>
-  </div>
-</nav>
-<!--
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
--->
-
-
-
-
-
-
-
-
-
-
-<style>
-/*
-DEBUT =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       :::::::::
-DEBUT =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       :::::::::
-DEBUT =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       :::::::::
-DEBUT =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       :::::::::
-DEBUT =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       :::::::::
-*/    
-#accueil.hero h2 {
-  font-size: 5vw;
-  -webkit-text-stroke: 2px red;
-  color: transparent;
-  background-image: url(../image/chicago.jpg);
-  background-clip: text;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-shadow: 10px 2px 2px rgb(199, 188, 188);
-}    
-/*
-FIN   =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       !!!!!!!!!
-FIN   =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       !!!!!!!!!
-FIN   =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       !!!!!!!!!
-FIN   =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       !!!!!!!!!
-FIN   =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       !!!!!!!!!
-*/
-</style>
-
-    <main>
-        <section id="accueil" class="hero">
-<!--
-DEBUT =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       :::::::::
-DEBUT =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       :::::::::
-DEBUT =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       :::::::::
-DEBUT =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       :::::::::
-DEBUT =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       :::::::::
--->
-            <h2>Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario</h2>
-<!--
-FIN   =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       !!!!!!!!!
-FIN   =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       !!!!!!!!!
-FIN   =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       !!!!!!!!!
-FIN   =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       !!!!!!!!!
-FIN   =====> STYLE appliqué à la phrase :      Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario       !!!!!!!!!
--->
-            <p>Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.</p>
-            <a href="#projets" class="cta-button">Voir mes Projets</a>
-        </section>
-
-<section id="responsive_mario">
-<!--    
-DEBUT ====================================> SITE WEB RESPONSIVE de Mario ::::::::::::::::::::::::::::
-DEBUT ====================================> SITE WEB RESPONSIVE de Mario ::::::::::::::::::::::::::::
-DEBUT ====================================> SITE WEB RESPONSIVE de Mario ::::::::::::::::::::::::::::
-DEBUT ====================================> SITE WEB RESPONSIVE de Mario ::::::::::::::::::::::::::::
-DEBUT ====================================> SITE WEB RESPONSIVE de Mario ::::::::::::::::::::::::::::
-
-samedi 29 novemebre 2025 :::::::::::::::::::::::::::::::
--->
-  <div class="row" style="margin-right:0; margin-left:0; " >
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-        <div class="row" style="margin-right:0; margin-left:0; " >
-          <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                  <div class="row" style="margin-right:0; margin-left:0; " >
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                        <div class="row" style="margin: 0 !important;">
-                            <h1>
-                On m&apos;appelle <span style="color: rgb(40, 5, 238); ">Mario</span>             
-                            </h1>
-
-                        </div>
-
-                    </div> 
-
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                        <div class="row" style="margin: 0 !important;">
-                            <!--  
-                          1) Un   """"PARAGRAPHE""""   ayant une   """"INTERLIGNE""""   égale à   1 centimêtre       =======>      p style="line-height: 1.0cm; "    
-
-                          2) """"RETRAIT POSITIF DE PREMIERE LIGNE""""     qui est     EGALE A    1,5 centimêtres       =======>      text-indent: 1.5cm;
-
-                          3) """"JUSTIFIER""""     l'    """"ALIGNEMENT DU PARAGRAPHE""""       =======>      text-align: justify;
-                            -->
-                            <p style="text-align: left; " >
-                <!-- Pour des raisons de sécurité, le poids total d'un ensemble routier avec tracteur ne doit pas dépasser 44 tonnes.           -->
-                <!-- Dans le détail, les flottes de poids lourds déployées par les entreprises de <span style="color: rgb(226, 96, 9);">transport routier</span> et les logisticiens dévoilent une grande diversité. Quels sont les principaux types de poids lourds aujourd'hui ? L'essentiel à retenir avec XP LOG.  -->
-                Développeur Django - Python 
-                            </p>
-                        </div>
-
-                    </div> 
-
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                        <div class="row" style="margin: 0 !important;">
-
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                                        <div class="row" style="margin: 0 !important;">
-
-                <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px;    margin-top:7.2px;  " >+1 an d'XP</button>
-
-                                        </div>     <!--  <div class="row" style="margin: 0 !important;"></div> -->
-
-                                    </div>         
-                                    
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                                        <div class="row" style="margin: 0 !important;">
-<!--
-                <button onclick="" class="w3-button w3-blue w3-round-large" style="margin-top:7.2px;  " >Apps performantes</button>                          
--->
-<!--                
-                <a href="" style="border:1px solid black; text-align:center; text-decoration:none;              margin-top:7.2px;  " >Apps performantes</a>                          
--->
-                <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px;    margin-top:7.2px;  " >Apps performantes</button>                                          
-                                        </div>     <!--  <div class="row" style="margin: 0 !important;"></div> -->
-
-                                    </div>         
-                                    
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                                        <div class="row" style="margin: 0 !important;">
-
-                <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px;    margin-top:7.2px;  " >SEO & Accessibilité</button>                          
-
-                                        </div>     <!--  <div class="row" style="margin: 0 !important;"></div> -->
-
-                                    </div>                             
-
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-                                      &nbsp;
-                                    </div>                                    
-
-                        </div>     <!--  <div class="row" style="margin: 0 !important;"></div> -->
-
-                    </div> 
-
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                        <div class="row" style="margin: 0 !important; " >
-                <p style="text-align: left; " >
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                                        <div class="row" style="margin: 0 !important;">
-
-                <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px;    margin-top:7.2px;  " >Voir mes projets</button>
-
-                                        </div>     <!--  <div class="row" style="margin: 0 !important;"></div> -->
-
-                                    </div>         
-                                    
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                                        <div class="row" style="margin: 0 !important;">
-
-                <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px;    margin-top:7.2px;  " >Me contacter</button>                          
-
-                                        </div>     <!--  <div class="row" style="margin: 0 !important;"></div> -->
-
-                                    </div>    
-                                    
-                                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-                                      &nbsp;
-                                    </div>                                    
-                                    
-                                          
-                </p>
-                        </div>     <!--  <div class="row" style="margin: 0 !important;"></div> -->
-
-                    </div> 
-
-                  </div>    <!--  <div class="row" style="margin-right:0; margin-left:0; " >  -->
-
-          </div>          <!--             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">   -->  
-
-          <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                  <div class="row" style="margin-right:0; margin-left:0; " >
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                        <div class="row" style="margin: 0 !important;">
-                            <!-- <p>
-                Pour des raisons de sécurité, le poids total d'un ensemble routier avec tracteur ne doit pas dépasser 44 tonnes.          
-                            </p> -->
-                            <img src="image/camion-routier.JPG" alt="" class="img-fluid">        
-                            
-
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                                        <div class="row" style="margin: 0 !important;">
-
-                <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px;    margin-top:7.2px;  " >Laravel</button>
-
-                                        </div>     <!--  <div class="row" style="margin: 0 !important;"></div> -->
-
-                                    </div>         
-                                    
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                                        <div class="row" style="margin: 0 !important;">
-
-                <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px;    margin-top:7.2px;  " >Django</button>                          
-
-                                        </div>     <!--  <div class="row" style="margin: 0 !important;"></div> -->
-
-                                    </div>         
-
-
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                                        <div class="row" style="margin: 0 !important;">
-
-                <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px;    margin-top:7.2px;  " >VueJS</button>
-
-                                        </div>     <!--  <div class="row" style="margin: 0 !important;"></div> -->
-
-                                    </div>         
-                                    
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">
-
-                                        <div class="row" style="margin: 0 !important;">
-
-                <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px;    margin-top:7.2px;  " >PostgreSQL</button>                          
-
-                                        </div>     <!--  <div class="row" style="margin: 0 !important;"></div> -->
-
-                                    </div>         
-                                                                        
-                            
-                        </div>    <!-- <div class="row" style="margin: 0 !important;"></div> -->
-
-                    </div> 
-                  </div>    <!--  <div class="row" style="margin-right:0; margin-left:0; " >  -->
-
-          </div>          <!--             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">   -->  
-        </div>        <!--         <div class="row" style="margin-right:0; margin-left:0; " > -->  
-
-    </div>  <!--  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bordure" style="margin: 0 !important;         height: auto;      text-align:left;     ">  -->
-  </div>       <!--	<div class="row" style="margin-right:0; margin-left:0; " > -->
-<!--    
-samedi 29 novemebre 2025 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-FIN   ====================================> SITE WEB RESPONSIVE de Mario !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> SITE WEB RESPONSIVE de Mario !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> SITE WEB RESPONSIVE de Mario !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> SITE WEB RESPONSIVE de Mario !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> SITE WEB RESPONSIVE de Mario !!!!!!!!!!!!!!!!!!!!!!!!!!!!
--->
-</section>    <!-- <section id="responsive_mario"> -->
-
-        <section id="projets" class="section-projets">
-            <h2>Mes Réalisations</h2>
-            
-            <div class="grille-projets">
-                
-                <article class="carte-projet">
-<!--
-                    <img src="https://via.placeholder.com/400x200?text=Projet+1" alt="Aperçu du Projet 1">
--->
-                    <img src="image/camion_fourgon.JPG" alt="Aperçu de mon Projet 1" class="img-fluid">
-                    <h3>Site Vitrine d'Entreprise</h3>
-                    <p>Création d'un site vitrine 100% responsive, axé sur la vitesse de chargement et l'accessibilité.</p>
-                    <p>Zoom sur les 8 types de camions de transport routier ...</p>
-                    <a href="#" target="_blank" class="lien-demo">Démo Live</a>
-                    <a href="#" target="_blank" class="lien-code">Code Source</a>
-                </article>
-
-                <article class="carte-projet">
-<!--
-                    <img src="https://via.placeholder.com/400x200?text=Projet+2" alt="Aperçu du Projet 2">
-                -->
-                    <img src="image/camion_porte-char.JPG" alt="Aperçude mon Projet 2" class="img-fluid">
-                    <h3>Refonte de Blog</h3>
-                    <p>Refonte complète du design d'un blog personnel en utilisant CSS Grid pour une mise en page magazine moderne.</p>
-                    <p>Zoom sur les 8 types de camions de transport routier ...</p>                    
-                    <a href="#" target="_blank" class="lien-demo">Démo Live</a>
-                    <a href="#" target="_blank" class="lien-code">Code Source</a>
-                </article>
-
-                <article class="carte-projet">
-<!--
-                    <img src="https://via.placeholder.com/400x200?text=Projet+3" alt="Aperçu du Projet 3">
--->
-                    <img src="image/camion_tautliner.JPG" alt="" class="img-fluid">
-                    <h3>Page d'Atterrissage (Landing Page)</h3>
-            <!-- 
-                    <p>Création d'une page de capture simple et efficace, intégrant des animations CSS subtiles et des formulaires stylisés.</p> 
-            -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, quia quaerat minima assumenda, nesciunt suscipit quae maiores laborum obcaecati accusamus fugiat voluptate? Minus eaque amet possimus earum quaerat? Impedit, cumque.</p>
-                    <p>Zoom sur les 8 types de camions de transport routier ...</p>                    
-                    <a href="#" target="_blank" class="lien-demo">Démo Live</a>
-                    <a href="#" target="_blank" class="lien-code">Code Source</a>
-                </article>
-                
-            </div>
-        </section>
-        
-        <section id="temoignages" class="section-temoignages">
-            <h2>Ce qu'ils disent de moi</h2>
-            
-            <div class="grille-temoignages">
-                
-                <article class="carte-temoignage">
-                    <p class="citation">"Le travail de ANDRIANTSIMBAHARILANTO Halley Mario sur notre site a été exceptionnel. La qualité du code et le respect du responsive design ont dépassé nos attentes."</p>
-                    <p class="auteur">**Sophie D.** - Chef de Projet</p>
-                </article>
-
-                <article class="carte-temoignage">
-                    <p class="citation">"Très réactif et d'une grande rigueur technique. Le portfolio est un exemple parfait de ce qu'on peut réaliser avec uniquement HTML et CSS."</p>
-                    <p class="auteur">**Marc L.** - Client Indépendant</p>
-                </article>
-                
-            </div>
-        </section>
-
-
-        <section id="a-propos" class="section-a-propos">
-            <h2>À Propos de Moi</h2>
-            
-            <div class="contenu-a-propos">
-                
-                <div class="image-profil">
-                    <!-- <img src="images/votre-photo.jpg" alt="Photo de profil de ANDRIANTSIMBAHARILANTO Halley Mario"> -->
-                    <img src="image/Mario.JPG" alt="Photo de profil de ANDRIANTSIMBAHARILANTO Halley Mario">                    
-                </div>
-
-                <div class="texte-a-propos">
-                    <p>Je suis un développeur passionné par la **maîtrise du front-end** et l'art de transformer une maquette en une expérience utilisateur fluide. J'ai une préférence pour les solutions simples, maintenables et entièrement conçues à partir de HTML/CSS.</p>
                     
-                    <h3>Mes Compétences Clés</h3>
-                    <ul class="liste-competences">
-                        <li><i class="fab fa-html5 fa-lg icone-skill"></i> **HTML5 Sémantique**</li>
-                        <li><i class="fab fa-css3-alt fa-lg icone-skill"></i> **CSS3 Avancé**</li>
-                        <li><i class="fas fa-mobile-alt fa-lg icone-skill"></i> Responsive Design / Media Queries</li>
-                        <li><i class="fas fa-layer-group fa-lg icone-skill"></i> Flexbox & CSS Grid</li>
-                        <li><i class="fas fa-tachometer-alt fa-lg icone-skill"></i> Optimisation de Performance</li>
-                        <li><i class="fas fa-universal-access fa-lg icone-skill"></i> Accessibilité Web (ARIA)</li>
-                        <li><i class="fas fa-palette fa-lg icone-skill"></i> Design Mobile-First</li>
-                        <li><i class="fab fa-sass fa-lg icone-skill"></i> Préprocesseurs (SCSS/Less - si applicable)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Service 1</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="submenuService2" role="button">
+                                    Service 2
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="submenuService2">
+                                    <li><a class="dropdown-item" href="#">Sous-service A</a></li>
+                                    <li><a class="dropdown-item" href="#">Sous-service B</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item dropdown-toggle" href="#" id="submenuService3" role="button">
+                                            Service 3
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="submenuService3">
+                                            <li><a class="dropdown-item" href="#">Sous-service C</a></li>
+                                            <li><a class="dropdown-item" href="#">Sous-service D</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="submenuService4" role="button">
+                                    Service 4
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="submenuService4">
+                                    <li><a class="dropdown-item" href="#">Sous-service E</a></li>
+                                    <li><a class="dropdown-item" href="#">Sous-service F</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
 
-        <section id="contact" class="section-contact">
-            <h2>Me Contacter</h2>
-            <p>N'hésitez pas à me contacter via les réseaux ou par email pour toute opportunité.</p>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#temoignages">Témoignages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#a-propos">À Propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    
+    <section id="accueil" class="hero">
+        <h2>Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario</h2>
+        <p>Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.</p>
+        <a href="#projets" class="cta-button">Voir mes Projets</a>
+    </section>
+
+    <section id="responsive_mario">
+        <div class="row" style="margin-right:0; margin-left:0; " >
+            <div class="col-12 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+
+                <div class="row" style="margin-right:0; margin-left:0; " >
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                        <div class="row" style="margin-right:0; margin-left:0; " >
+                            <div class="col-12 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                <div class="row" style="margin: 0 !important;">
+                                    <h1>On m&apos;appelle <span style="color: rgb(40, 5, 238); ">Mario</span></h1>
+                                </div>
+                            </div>
+                            <div class="col-12 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                <div class="row" style="margin: 0 !important;">
+                                    <p style="text-align: left; ">
+                                        Développeur Django - Python
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                <div class="row" style="margin: 0 !important;">
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">+1 an d'XP</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">Apps performantes</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">SEO & Accessibilité</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">&nbsp;</div>
+                                </div>
+                            </div>
+                            <div class="col-12 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                <div class="row" style="margin: 0 !important; " >
+                                    <p style="text-align: left; " >
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 bordure" style="margin: 0 !important; height: auto; text-align:left; ">
+                                            <div class="row" style="margin: 0 !important;">
+                                                <a href="#projets" class="cta-button" style="margin-top:7.2px;">Voir mes projets</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 bordure" style="margin: 0 !important; height: auto; text-align:left; ">
+                                            <div class="row" style="margin: 0 !important;">
+                                                <a href="#contact" class="cta-button" style="margin-top:7.2px; background-color: var(--couleur-primaire);">Me contacter</a>
+                                            </div>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                        <div class="row" style="margin-right:0; margin-left:0; " >
+                            <div class="col-12 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                <div class="row" style="margin: 0 !important;">
+                                    <img src="image/camion-routier.JPG" alt="Image illustrant le développement Django" class="img-fluid"> 
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">Laravel</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">Django</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">VueJS</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 bordure" style="margin: 0 !important; height: auto; text-align:left;">
+                                        <div class="row" style="margin: 0 !important;">
+                                            <button onclick="" class="w3-button w3-blue w3-round-large" style="font-size:12px; margin-top:7.2px;">PostgreSQL</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </section>
+
+    <section id="projets" class="section-projets">
+        <h2>Mes Réalisations</h2>
+        
+        <div class="grille-projets">
             
-            <div class="liens-sociaux">
-<!--
-                <a href="mailto:votre.email@exemple.com" target="_blank" class="bouton-social">
--->
-                <a href="mailto:halleymariomen@gmail.com" target="_blank" class="bouton-social">                    
-                    <i class="fas fa-envelope fa-2x"></i>
-                    <span>Email</span>
-                </a>
-                <a href="https://github.com/votreprofil" target="_blank" class="bouton-social">
-                    <i class="fab fa-github fa-2x"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://linkedin.com/in/votreprofil" target="_blank" class="bouton-social">
-                    <i class="fab fa-linkedin fa-2x"></i>
-                    <span>LinkedIn</span>
-                </a>
+            <article class="carte-projet">
+                <img src="image/camion_fourgon.JPG" alt="Aperçu de mon Projet 1" class="img-fluid">
+                <h3>Site Vitrine d'Entreprise</h3>
+                <p>Création d'un site vitrine 100% responsive, axé sur la vitesse de chargement et l'accessibilité.</p>
+                <p>Zoom sur les 8 types de camions de transport routier ...</p>
+                <a href="#" target="_blank" class="lien-demo">Démo Live</a>
+                <a href="#" target="_blank" class="lien-code">Code Source</a>
+            </article>
+
+            <article class="carte-projet">
+                <img src="image/camion_porte-char.JPG" alt="Aperçude mon Projet 2" class="img-fluid">
+                <h3>Refonte de Blog</h3>
+                <p>Refonte complète du design d'un blog personnel en utilisant CSS Grid pour une mise en page magazine moderne.</p>
+                <p>Zoom sur les 8 types de camions de transport routier ...</p> 
+                <a href="#" target="_blank" class="lien-demo">Démo Live</a>
+                <a href="#" target="_blank" class="lien-code">Code Source</a>
+            </article>
+
+            <article class="carte-projet">
+                <img src="image/camion_tautliner.JPG" alt="Aperçu de mon Projet 3" class="img-fluid">
+                <h3>Page d'Atterrissage (Landing Page)</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, quia quaerat minima assumenda, nesciunt suscipit quae maiores laborum obcaecati accusamus fugiat voluptate? Minus eaque amet possimus earum quaerat? Impedit, cumque.</p>
+                <p>Zoom sur les 8 types de camions de transport routier ...</p> 
+                <a href="#" target="_blank" class="lien-demo">Démo Live</a>
+                <a href="#" target="_blank" class="lien-code">Code Source</a>
+            </article>
+            
+        </div>
+    </section>
+    
+    <section id="temoignages" class="section-temoignages">
+        <h2>Ce qu'ils disent de moi</h2>
+        
+        <div class="grille-temoignages">
+            
+            <article class="carte-temoignage">
+                <p class="citation">"Le travail de ANDRIANTSIMBAHARILANTO Halley Mario sur notre site a été exceptionnel. La qualité du code et le respect du responsive design ont dépassé nos attentes."</p>
+                <p class="auteur">**Sophie D.** - Chef de Projet</p>
+            </article>
+
+            <article class="carte-temoignage">
+                <p class="citation">"Très réactif et d'une grande rigueur technique. Le portfolio est un exemple parfait de ce qu'on peut réaliser avec uniquement HTML et CSS."</p>
+                <p class="auteur">**Marc L.** - Client Indépendant</p>
+            </article>
+            
+        </div>
+    </section>
+
+
+    <section id="a-propos" class="section-a-propos">
+        <h2>À Propos de Moi</h2>
+        
+        <div class="contenu-a-propos">
+            
+            <div class="image-profil">
+                <img src="image/Mario.JPG" alt="Photo de profil de ANDRIANTSIMBAHARILANTO Halley Mario">
             </div>
-        </section>
-    </main>
 
-<!--
-EMAIL :            halleymariomen@gmail.com
+            <div class="texte-a-propos">
+                <p>Je suis un développeur passionné par la **maîtrise du front-end** et l'art de transformer une maquette en une expérience utilisateur fluide. J'ai une préférence pour les solutions simples, maintenables et entièrement conçues à partir de HTML/CSS.</p>
+                
+                <h3>Mes Compétences Clés</h3>
+                <ul class="liste-competences">
+                    <li><i class="fab fa-html5 fa-lg icone-skill"></i> **HTML5 Sémantique**</li>
+                    <li><i class="fab fa-css3-alt fa-lg icone-skill"></i> **CSS3 Avancé**</li>
+                    <li><i class="fas fa-mobile-alt fa-lg icone-skill"></i> Responsive Design / Media Queries</li>
+                    <li><i class="fas fa-layer-group fa-lg icone-skill"></i> Flexbox & CSS Grid</li>
+                    <li><i class="fas fa-tachometer-alt fa-lg icone-skill"></i> Optimisation de Performance</li>
+                    <li><i class="fas fa-universal-access fa-lg icone-skill"></i> Accessibilité Web (ARIA)</li>
+                    <li><i class="fas fa-palette fa-lg icone-skill"></i> Design Mobile-First</li>
+                    <li><i class="fab fa-sass fa-lg icone-skill"></i> Préprocesseurs (SCSS/Less - si applicable)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-PORTFOLIO de Mario :
+    <section id="contact" class="section-contact">
+        <h2>Me Contacter</h2>
+        <p>N'hésitez pas à me contacter via les réseaux ou par email pour toute opportunité.</p>
+        
+        <div class="liens-sociaux">
+            <a href="mailto:halleymariomen@gmail.com" target="_blank" class="bouton-social">
+                <i class="fas fa-envelope fa-2x"></i>
+                <span>Email</span>
+            </a>
+            <a href="https://github.com/votreprofil" target="_blank" class="bouton-social">
+                <i class="fab fa-github fa-2x"></i>
+                <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/votreprofil" target="_blank" class="bouton-social">
+                <i class="fab fa-linkedin fa-2x"></i>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+    </section>
+</main>
 
-https://gemini.google.com/app/28f75ecab468e54f
-https://gemini.google.com/app/28f75ecab468e54f
-https://gemini.google.com/app/28f75ecab468e54f
-https://gemini.google.com/app/28f75ecab468e54f
--->
-
-    <footer>
-<!--
-        <p>&copy; 2025 | Portfolio de [Votre Prénom]. Tous droits réservés.</p>
--->
-        <p>&copy; 2025 | Portfolio de Halley Mario. Tous droits réservés.</p>        
-    </footer>
-
+<footer>
+    <p>&copy; 2025 | Portfolio de Halley Mario. Tous droits réservés.</p>
+</footer>
 
 <script src="bootstrap-5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-/*
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-DEBUT ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" :::::::::::::::::::::::::::::::::::::::::::::
-*/
-/*
+    /*
+     * CORRECTION: Gestion du menu déroulant multi-niveaux (dropdown-submenu) 
+     * en mode mobile/tablette (moins de 992px) SANS RECHARGEMENT lors du redimensionnement.
+     * Utilisation de window.matchMedia pour une gestion dynamique et performante.
+     */
     document.addEventListener("DOMContentLoaded", function () {
-        if (window.innerWidth < 992) {
-            document.querySelectorAll('.dropdown-submenu > a').forEach(function (trigger) {
-                trigger.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    const submenu = this.nextElementSibling;
-                    const parentMenu = this.closest('.dropdown-menu');
-                    parentMenu.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
-                        if (openMenu !== submenu) {
-                            openMenu.classList.remove('show');
-                        }
-                    });
-                    submenu.classList.toggle('show');
-                });
-            });
+        const mediaQuery = window.matchMedia('(max-width: 991.98px)');
 
-            document.querySelectorAll('.dropdown-submenu').forEach(function(submenuItem) {
-                submenuItem.addEventListener('click', function(e) {
-                    e.stopPropagation();
+        function handleMediaQueryChange(e) {
+            // e.matches est vrai si la condition est remplie (mode mobile/tablette)
+            if (e.matches) {
+                // Mode mobile/tablette : on gère l'accordéon au clic
+                document.querySelectorAll('.dropdown-submenu > a').forEach(function (trigger) {
+                    trigger.removeEventListener('click', handleMobileClick); 
+                    trigger.addEventListener('click', handleMobileClick);
                 });
-            });
+            } else {
+                // Mode bureau : on désactive la gestion manuelle du clic
+                document.querySelectorAll('.dropdown-submenu > a').forEach(function (trigger) {
+                    trigger.removeEventListener('click', handleMobileClick);
+                    // Ferme les sous-menus ouverts s'il y en a pour revenir au comportement 'hover' de Bootstrap
+                    const submenu = trigger.nextElementSibling;
+                    if (submenu) {
+                        submenu.classList.remove('show');
+                    }
+                });
+            }
         }
-    });
-*/
 
-
-
-
-/*
-PROBLEME RENCONTRE :
-
-Pouvez vous corriger le point suivant :
-
-
-On utilise uniquement le navigateur comme mozilla firefox.
-
-
-Quand l'affichage de Mozilla Firefox correspond à la largeur de l'écran d'un DEKTOP alors quand on clique sur le menu "Service 2" alors les sous menus correspondant au menu "Service 2" s'affichent c'est-à-dire les sous menus "Sous-service A" et "Sous-service B" s'affichent correctement.
-
-
-Mais quand on redimensionne la LARGEUR du navigateur MOZILLA FIREFOX avec la LARGEUR de la TABLETTE ou la LARGEUR du SMARTPHONE puis qu'on CLIQUE ENSUITE sur le menu "Service 2" alors les sous menus correspondant au menu "Service 2" ne s'affichent pas c'est-à-dire les sous menus "Sous-service A" et "Sous-service B" ne s'affichent pas. 
-
-
-Alors que si on actualise ensuite le navigateur MOZILLA FIREFOX alors c'est uniquement de cette façon que les sous menus "Sous-service A" et "Sous-service B" s'affichent parfaitement après le redimensionnement du navigateur MOZILLA FIREFOX en partant depuis la largeur de l'écran DESKTOP vers la LARGEUR de l'écran TABLETTE ou SMARTPHONE.
-
-
-Pouvez vous corriger ce problème sans avoir à reloader la navigateur mozilla firefox ? 
-*/	
-
-
-
-/*
-C'est un problème courant de comportement de menu déroulant (dropdown) dans Bootstrap lors du redimensionnement de la fenêtre. Le souci est que le code JavaScript pour gérer l'ouverture du sous-menu en mode mobile n'est pas réévalué automatiquement lorsque la taille de la fenêtre change. Le code d'origine ne prend en charge que la taille initiale de la fenêtre.
-
-Pour résoudre ce problème sans recharger la page, on doit ajouter un écouteur d'événement sur le redimensionnement de la fenêtre. Cet écouteur va désactiver l'événement click sur le menu déroulant en mode mobile, puis le réactiver lorsque l'écran est suffisamment large. Voici la correction à apporter.
-
-Explication de la correction
-
-Le code JavaScript d'origine utilise if (window.innerWidth < 992) pour définir le comportement du menu. Cependant, cette condition n'est vérifiée qu'une seule fois au chargement de la page (DOMContentLoaded). Pour qu'elle soit évaluée à chaque redimensionnement, nous devons l'intégrer dans un événement resize.
-
-La solution consiste à utiliser la fonction matchMedia() qui est une API moderne pour détecter les changements de média (comme la largeur de l'écran). Cela permet de ne pas surcharger l'application en évaluant du code à chaque pixel de changement, mais plutôt lorsque les conditions de la media query changent.
-
-Voici le code corrigé :
-*/
-	
-	
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const mediaQuery = window.matchMedia('(max-width: 991.98px)');
-
-    function handleMediaQueryChange(e) {
-        // e.matches est vrai si la condition est remplie (mode mobile/tablette)
-        if (e.matches) {
-            // Mode mobile/tablette : on gère l'accordéon
-            document.querySelectorAll('.dropdown-submenu > a').forEach(function (trigger) {
-                trigger.addEventListener('click', handleMobileClick);
-            });
-        } else {
-            // Mode bureau : on désactive la gestion manuelle du clic
-            document.querySelectorAll('.dropdown-submenu > a').forEach(function (trigger) {
-                trigger.removeEventListener('click', handleMobileClick);
-                // Ferme les sous-menus ouverts s'il y en a
-                const submenu = trigger.nextElementSibling;
-                if (submenu) {
-                    submenu.classList.remove('show');
+        function handleMobileClick(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const submenu = this.nextElementSibling;
+            const parentMenu = this.closest('.dropdown-menu');
+            
+            // Ferme les autres sous-menus ouverts
+            parentMenu.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
+                if (openMenu !== submenu) {
+                    openMenu.classList.remove('show');
                 }
             });
+            
+            submenu.classList.toggle('show');
         }
-    }
 
-    function handleMobileClick(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        const submenu = this.nextElementSibling;
-        const parentMenu = this.closest('.dropdown-menu');
-        
-        // Ferme les autres sous-menus ouverts
-        parentMenu.querySelectorAll('.dropdown-menu.show').forEach(function (openMenu) {
-            if (openMenu !== submenu) {
-                openMenu.classList.remove('show');
-            }
+        // Gère le comportement initial au chargement de la page
+        handleMediaQueryChange(mediaQuery);
+
+        // Ajoute un écouteur pour les changements de média (redimensionnement dynamique)
+        mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+        // Empêche la propagation du clic sur les éléments de sous-menu pour ne pas fermer le menu principal
+        document.querySelectorAll('.dropdown-submenu').forEach(function(submenuItem) {
+            submenuItem.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
         });
-        
-        submenu.classList.toggle('show');
-    }
-
-    // Gère le comportement initial au chargement de la page
-    handleMediaQueryChange(mediaQuery);
-
-    // Ajoute un écouteur pour les changements de média
-    mediaQuery.addEventListener('change', handleMediaQueryChange);
-
-    // Empêche la propagation du clic sur les éléments de sous-menu pour ne pas fermer le menu principal
-    document.querySelectorAll('.dropdown-submenu').forEach(function(submenuItem) {
-        submenuItem.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    });
-});	
-
-
-
-/*
-Étapes à suivre pour appliquer la correction
-
-    Copiez le bloc de code JavaScript ci-dessus.
-
-    Remplacez le second bloc <script> existant dans votre code HTML par le nouveau code.
-
-Ce nouveau script est plus robuste. Il utilise l'événement change sur la media query pour réagir dynamiquement aux redimensionnements, assurant que le menu se comporte comme attendu, que ce soit sur un ordinateur de bureau, une tablette ou un smartphone, sans avoir à recharger la page.
-*/
-/*
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FIN   ====================================> Un ""MENU"" avec ses ""QUATRE (04) SOUS-MENUS"" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-*/
+    }); 
 </script>
-
 
 </body>
 </html>
-

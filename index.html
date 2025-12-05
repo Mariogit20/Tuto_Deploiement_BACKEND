@@ -26,6 +26,15 @@
     --couleur-texte: #2c3e50; /* Gris-bleu foncé */
     --couleur-fond-clair: #f7f9fc;
     --font-principale: 'Poppins', sans-serif;
+
+/*
+DEBUT ================> Style CSS de Tanjona ::::::::::::::::::::::::::::::::::::
+*/    
+  --brand: #5aa6ff;
+  --brand-2: #7c4dff;
+/*
+FIN   ================> Style CSS de Tanjona !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/ 
 }
 
 html {
@@ -369,7 +378,9 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='purple',endColo
 #responsive_mario img {
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem;
+/*
+    margin-bottom: 1.5rem;             """""""MARGE EXTERNE du BAS""""""" ==============> En BAS DE l'    """""""IMAGE"""""""
+*/
 }
 
 /* =====================================================
@@ -434,8 +445,13 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='purple',endColo
 }
 
 .lien-demo {
+/*
     background-color: var(--couleur-primaire);
     color: white;
+*/
+
+background:linear-gradient(90deg,var(--brand),var(--brand-2));    
+color: white;
 }
 
 .lien-code {
@@ -647,12 +663,20 @@ https://gemini.google.com/app/04dcf77f56400952?hl=fr
 Le """""GRIS""""" est AU """""CENTRE""""" DU """""BOUTON"""""      <a href="#projets" class="COULEUR_DEGRADE_du_BOUTON btn cta-button" style="margin-top:7.2px;">Voir mes projets</a>
 
 Le """""BLEU""""" est AU """""BORDURE""""" DU """""BOUTON"""""      <a href="#projets" class="COULEUR_DEGRADE_du_BOUTON btn cta-button" style="margin-top:7.2px;">Voir mes projets</a>
-*/     
+*/  
+/*
   background-image: radial-gradient(
     circle at center, 
     gray 0%, 
     #3a7bd5 100%
   );
+*/
+  background-image: radial-gradient(
+    circle at center, 
+    var(--brand) 0%, 
+    #3a7bd5 100%
+  );
+
 }
 
 
@@ -899,7 +923,14 @@ FIN   ========> de la BARRE DE NAVIGATION des MENUS et SOUS MENUS ou NavBar !!!!
 -->
     <section id="accueil" class="hero"  >         
         <!-- <h2>Bienvenue ! Je suis ANDRIANTSIMBAHARILANTO Halley Mario</h2> -->
+<!--
         <p style="font-size: xx-large; " >Bienvenue ! Je suis <span style="color: rgb(40, 5, 238); ">ANDRIANTSIMBAHARILANTO Halley Mario 😃</span></p>        
+-->         
+<!--  
+        <p style="    font-size: 3vw;    " >Bienvenue ! Je suis <span style="color: rgb(40, 5, 238); ">ANDRIANTSIMBAHARILANTO Halley Mario 😃</span></p>        
+-->        
+        <p style="    font-size: 3vw;    " >Bienvenue ! Je suis <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;       text-shadow:none;  ">ANDRIANTSIMBAHARILANTO Halley Mario</span> 😃</p>        
+
         <p>Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes.</p>
 <!--        
     -webkit-text-stroke: 2px blue;   /* """""BORDURE de COULEUR BLEU"""""    à la    """""PHRASE"""""    suivante =========>      """""Intégrateur web passionné par la création d'interfaces utilisateur élégantes et performantes."""""     */         /* Mario */  
@@ -913,7 +944,7 @@ FIN   ========> de la BARRE DE NAVIGATION des MENUS et SOUS MENUS ou NavBar !!!!
         <a href="#projets"                                         numero_TABLE_Appreciation="3"        id='LIEN_IDENTIFICATION_________F_503'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Je suis un Deuxi&egrave;me Bouton Lien !"          title=''                   class="btn btn-primary                                    RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51                     cta-button"                                            style="    -webkit-text-stroke: 0px transparent;    transform: translateY(0px);   " >Voir mes Projets</a>
 -->
 
-        <a href="#projets"                                         numero_TABLE_Appreciation="3"        id='LIEN_IDENTIFICATION_________F_503'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Visitez Mes Projets !"          title=''                   class="btn btn-primary                                    RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51                     cta-button"                                            style="    -webkit-text-stroke: 0px transparent;    transform: translateY(0px);   " >Voir mes Projets</a>
+        <a href="#projets"                                         numero_TABLE_Appreciation="3"        id='LIEN_IDENTIFICATION_________F_503'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Visitez Mes Projets !"          title=''                   class="btn btn-primary                                    RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51                     cta-button           COULEUR_DEGRADE_du_BOUTON"                                            style="    -webkit-text-stroke: 0px transparent;    transform: translateY(0px);      text-shadow:none;   " >Voir mes Projets</a>
 
         <!-- <a href="#"class=''      >Survollez ce Deuxi&egrave;me Bouton Lien .....</a>                 -->
 <!--
@@ -954,6 +985,18 @@ FIN   ========================================================> INFOBULLE !!!!!!
                             <div class="col-12 bordure" style="margin: 0 !important; height: auto; text-align:left;">
                                 <div class="row" style="margin: 0 !important;">
                                     <h1>On m&apos;appelle <span style="color: rgb(40, 5, 238); ">Mario</span></h1>
+                                    <h1>On m'appelle 
+<!--
+DEBUT ================> Style CSS de Tanjona ::::::::::::::::::::::::::::::::::::
+    
+  --brand: #5aa6ff;
+  --brand-2: #7c4dff;  
+-->
+                                        <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">Niaina</span>
+<!--
+FIN   ================> Style CSS de Tanjona !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-->                              
+                                    </h1>
                                 </div>
                             </div>
                             <div class="col-12 bordure" style="margin: 0 !important; height: auto; text-align:left;">
@@ -1161,7 +1204,11 @@ Ces deux actions devraient supprimer l'espace indésirable entre les deux groupe
     <div class="row" style="margin: 0 !important; " >
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 bordure" style="margin: 0 !important; height: auto; text-align:left; ">
             <div class="row" style="margin: 0 !important;">
+<!--
                 <a href="#projets" class="COULEUR_DEGRADE_du_BOUTON btn cta-button" style="margin-top:7.2px;">Voir mes projets</a>
+-->
+                <a href="#projets" class="COULEUR_DEGRADE_du_BOUTON btn cta-button" style="margin-top:7.2px; " >Voir mes projets</a>
+
             </div>
         </div>
         
@@ -1354,8 +1401,10 @@ FIN   ==============> """"""""CACHER""""""""    une    """"""""BALISE HTML""""""
 
 <!--
 DEBUT ===========================> Profil WHATSAPP ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
--->
+
 <a href="https://wa.me/votre_numero_de_telephone"
+-->
+<a href="https://wa.me/+261340903559"
     target="_blank"
     class="bouton-social
         RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50
@@ -1367,9 +1416,9 @@ DEBUT ===========================> Profil WHATSAPP :::::::::::::::::::::::::::::
     id='LIEN_IDENTIFICATION_________F_504'
     onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'
     onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"
-    alt="Me contacter sur WhatsApp au 034&nbsp;09&nbsp;035&nbsp;59 👍"
+    alt="WhatsApp : &nbsp; +26134&nbsp;09&nbsp;035&nbsp;59 👍"
     title=""
-
+>
     <i class="fab fa-whatsapp fa-2x"></i>
     <span>WhatsApp</span>
 </a>

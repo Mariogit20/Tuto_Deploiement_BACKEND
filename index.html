@@ -1370,8 +1370,11 @@ FIN   ==============> """"""""CACHER""""""""    une    """"""""BALISE HTML""""""
 <!--
             <a href="mailto:halleymariomen@gmail.com" target="_blank" class="bouton-social                                    RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         "                   numero_TABLE_Appreciation="2"        id='LIEN_IDENTIFICATION_________F_502'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Je suis une Infobulle cr&eacute;ée en JQUERY !"          title=''             >                
 -->
+<!--
             <a href="mailto:halleymariomen@gmail.com" target="_blank" class="bouton-social                                    RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         "                   numero_TABLE_Appreciation="2"        id='LIEN_IDENTIFICATION_________F_502'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="Adresse E-mail : &nbsp; halleymariomen@gmail.com"          title=''             >                
-                
+-->                
+            <a href="mailto:halleymariomen@gmail.com" target="_blank" class="bouton-social                                    RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50              TEXTE_____DE_L_INFOBULLE_50              RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51              TEXTE_____DE_L_INFOBULLE_51         "                   numero_TABLE_Appreciation="2"        id='LIEN_IDENTIFICATION_________F_502'          onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'       onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"                    alt="halleymariomen@gmail.com"          title=''             >                
+                              
                 <i class="fas fa-envelope fa-2x"></i>
                 <span>Email</span>
             </a>
@@ -1404,6 +1407,7 @@ DEBUT ===========================> Profil WHATSAPP :::::::::::::::::::::::::::::
 
 <a href="https://wa.me/votre_numero_de_telephone"
 -->
+<!--
 <a href="https://wa.me/+261340903559"
     target="_blank"
     class="bouton-social
@@ -1422,6 +1426,27 @@ DEBUT ===========================> Profil WHATSAPP :::::::::::::::::::::::::::::
     <i class="fab fa-whatsapp fa-2x"></i>
     <span>WhatsApp</span>
 </a>
+-->
+
+<a href="https://wa.me/+261340903559"
+    target="_blank"
+    class="bouton-social
+        RANG_____ENREGISTREMENT_DE_L_INFOBULLE_50
+        TEXTE_____DE_L_INFOBULLE_50
+        RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51
+        TEXTE_____DE_L_INFOBULLE_51
+    "
+    numero_TABLE_Appreciation="4"
+    id='LIEN_IDENTIFICATION_________F_504'
+    onmouseover='FONCTION________Creer_une_INFOBULLE_51(this)'
+    onmouseout="FONCTION________Supprimer_une_INFOBULLE_51(this)"
+    alt="+26134&nbsp;09&nbsp;035&nbsp;59 👍"
+    title=""
+>
+    <i class="fab fa-whatsapp fa-2x"></i>
+    <span>WhatsApp</span>
+</a>
+
 <!--
 FIN   ===========================> Profil WHATSAPP !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 -->
@@ -1575,7 +1600,9 @@ alert("INFOBULLE à CREER !")
   */
   if($("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).attr("alt")=="")
             {		
-      $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"  style="display:none;  "></span>');      
+//      $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"  style="display:none;  "></span>');      
+      $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"  style="display:none;                font-size: 3vw;      "></span>');      
+      return false;         
       return false;   
             }
   
@@ -1585,7 +1612,8 @@ alert("INFOBULLE à CREER !")
       bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.append($(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).attr("alt"));
       $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + x).attr("alt","");           
   */
-  $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span>');
+//  $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"></span>');
+  $("body").append('<span class="infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML"                  style="    font-size: 3vw;      "></span>');  
       var bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51 = $(".infobulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51________AFFICHER_LE________NUMERO_du_LIEN_HTML:last");
       bulle_RECHERCHE_________AutreDEUXIEME_TABLEAU_PERSONNALISE_Autre________2_PERSONNALISEE_51.append($("#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation")  ).attr("alt"));
       $(".RANG_____ENREGISTREMENT_DE_L_INFOBULLE_51.TEXTE_____DE_L_INFOBULLE_51#LIEN_IDENTIFICATION_________F_50" + $(x).attr("numero_TABLE_Appreciation") ).attr("alt","");           

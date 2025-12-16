@@ -1,0 +1,46 @@
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git add *
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git commit -m "cinquante troisieme commit"
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git config --global http.postBuffer 2048576000
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git push
+Enumerating objects: 74, done.
+Counting objects: 100% (74/74), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (66/66), done.
+Writing objects: 100% (69/69), 3.28 MiB | 10.58 MiB/s, done.
+Total 69 (delta 18), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (18/18), completed with 3 local objects.
+To https://github.com/Mariogit20/Tuto_Deploiement_BACKEND.git
+   2d68a13..1b53e4d  main -> main
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git add *
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git commit -m "cinquante quatrieme commit"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git config --global http.postBuffer 2048576000
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$ git push
+Everything up-to-date
+
+AzureAD+SPSSE02MEN@DESKTOP-S95K8U0 MINGW64 /d/PYTHON DJANGO HOPES/github_DEPLOIEMENT/Tuto_Deploiement_BACKEND (main)
+$
